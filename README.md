@@ -1,4 +1,4 @@
-# neogcamp-CLI-Fandom-Quiz-App
+# CLI Fandom Quiz App
 
 This is a CLI quiz game which was made as the assignment for Neog Camp by Tanay Pratap.
 
