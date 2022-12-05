@@ -1,7 +1,4 @@
 var readlineSync = require('readline-sync');
-
-var chalk = require('chalk');
-
 var score = 0;
 
 var highScores = [
@@ -21,7 +18,7 @@ var questions = [
 			"c. Obidiah Stane",
 			"d. Yondu Udonta"
 		],
-		answer: "b. Ronan The Accuser",
+		answer: "b",
 	},
 	{
 		question: "2. What type of scientist is Jane Foster in Thor? ",
@@ -31,7 +28,7 @@ var questions = [
 			"c. Chemist",
 			"d. Dioptrics"
 		],
-		answer: "a. Astronomer",
+		answer: "a",
 	},
 	{
 		question: "3. What does S.H.I.E.L.D stand for? ",
@@ -41,7 +38,7 @@ var questions = [
 			"c. Strategic Homeland Intervention, Enforcement and Logistics Division",
 			"d. Stones Hidden In Extraterrestrial Lands and Demographics"
 		],
-		answer: "c. Strategic Homeland Intervention, Enforcement and Logistics Division",
+		answer: "c",
 	},
 	{
 		question: "4. What type of vehicle did Thanos briefly use in the comic books and make a brief appearance in the Loki series? ",
@@ -51,7 +48,7 @@ var questions = [
 			"c. A car with “perfectly balanced” on the side",
 			"d. A motorbike with “Titan” on the side"
 		],
-		answer: "b. A helicopter with “Thanos” written on the side",
+		answer: "b",
 	},
 	{
 		question: "5. Ryan Reynolds acted in two Marvel movie series, one was the Deadpool movie series, the other was: ",
@@ -61,7 +58,7 @@ var questions = [
 			"c. Blade",
 			"d. Guardians of the galaxy"
 		],
-		answer: "c. Blade",
+		answer: "c",
 	},
   {
 		question: "6. In which order are the Infinity Stones revealed in the Marvel Cinematic Universe? ",
@@ -71,7 +68,7 @@ var questions = [
 			"c. Reality Stone, Time Stone, Mind Stone, Soul Stone, Power Stone and Space Stone",
 			"d. Space Stone, Mind Stone, Reality Stone, Power Stone, Time Stone and Soul Stone"
 		],
-		answer: "d. Space Stone, Mind Stone, Reality Stone, Power Stone, Time Stone and Soul Stone",
+		answer: "d",
 	},
   {
 		question: "7. During which war did Captain America get his superhuman abilities? ",
@@ -81,7 +78,7 @@ var questions = [
 			"c. Worlds War II",
 			"d. The Cold War"
 		],
-		answer: "c. Worlds War II",
+		answer: "c",
 	},
 ]
 
@@ -94,9 +91,9 @@ function welcome() {
 
 
 function play(question,options, answer) {
-	console.log(chalk.blue(question));
+	console.log(question);
 
-	console.log(chalk.yellow("\nOptions:\n"))
+	console.log("\nOptions:\n");
 	for(let i =0; i< options.length; i++){
 		console.log(options[i]);
 	}
@@ -105,10 +102,10 @@ function play(question,options, answer) {
 	console.log(`you entered ${userAns}`);
 
 	if (userAns.toUpperCase() == answer.toUpperCase()) {
-		console.log(chalk.green("You're right"));
-		score = score + 2;
+		console.log("You're right");
+		score = score + 1;
 	} else {
-		console.log(chalk.red("You're wrong"));
+		console.log("You're wrong");
 	}
 	console.log(`SCORE: ${score}`);
 }
@@ -137,7 +134,7 @@ function checkHighScore() {
 	for (let i = 0; i < highScores.length; i++) {
 		let currentScore = highScores[i];
 		if (score > currentScore.score) {
-			console.log(chalk.green(`Congratulations You made a highscore. You have beaten ${currentScore.name} by ${score - currentScore.score} `))
+			console.log(`Congratulations You made a highscore. You have beaten ${currentScore.name} by ${score - currentScore.score} `)
 			console.log('You can send me a screenshot to get your score to be added to the highscore list.')
 		}
 	}
