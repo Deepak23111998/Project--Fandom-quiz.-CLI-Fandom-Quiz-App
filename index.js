@@ -134,7 +134,7 @@ function checkHighScore() {
 	for (let i = 0; i < highScores.length; i++) {
 		let currentScore = highScores[i];
 		if (score > currentScore.score) {
-			console.log(`Congratulations You made a highscore. You have beaten ${currentScore.name} by ${score - currentScore.score} `)
+			console.log(`Congratulations You made a highscore. You have beaten ${currentScore.name} by ${score - currentScore.score}`)
 			console.log('You can send me a screenshot to get your score to be added to the highscore list.')
 		}
 	}
